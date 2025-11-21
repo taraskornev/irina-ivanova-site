@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Kontakt — Irina Ivanova</title>
+  <meta name="description" content="Kontakt zu Psychotherapeutin Irina Ivanova: E-Mail, Berlin, online oder vor Ort." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Zum Inhalt springen</a>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="logo">Irina Ivanova</div>
+      <button class="nav-toggle" id="navToggle" aria-label="Menü">☰</button>
+      <nav class="main-nav" aria-label="Hauptmenü">
+        <ul>
+          <li><a href="index-de.html">Start</a></li>
+          <li><a href="seminars-de.html">Seminare</a></li>
+          <li><a href="about-de.html">Über mich</a></li>
+          <li><a href="contact-de.html" class="active">Kontakt</a></li>
+          <li class="lang-switch">
+            <a href="contact.html">RU</a>
+            <span>/</span>
+            <a href="contact-de.html" class="active-lang" aria-current="true">DE</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <section class="contact-intro container" aria-labelledby="contact-title">
+      <h1 id="contact-title">Kontakt</h1>
+      <p>Kontaktieren Sie mich für einen Termin oder Fragen. Online und vor Ort in Berlin verfügbar.</p>
+    </section>
+
+    <section class="contact-grid container" aria-label="Kontakt aufnehmen">
+      <div class="contact-info">
+        <h2>Daten</h2>
+        <p><strong>E-Mail:</strong> <a href="mailto:placeholder@example.com">placeholder@example.com</a></p>
+        <p><strong>Ort:</strong> Berlin · Online / Vor Ort</p>
+        <p><strong>Ansatz:</strong> Individuell abgestimmte integrative Therapie.</p>
+        <figure class="contact-illustration">
+          <img src="images/contact-illustration.svg" alt="Kontaktillustration" loading="lazy">
+        </figure>
+      </div>
+      <div class="contact-form-wrapper">
+        <h2>Formular</h2>
+        <form id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required aria-required="true" autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="email" required aria-required="true" autocomplete="email">
+          </div>
+          <div class="form-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" rows="5" required aria-required="true"></textarea>
+          </div>
+          <button type="submit" class="btn primary">Senden</button>
+          <p class="form-note">Daten dienen nur der Kontaktaufnahme. Vertraulichkeit gewahrt.</p>
+          <div id="formStatus" role="status" aria-live="polite"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer" role="contentinfo">
+      <div class="container footer-flex">
+        <div>
+          <p><strong>Irina Ivanova</strong></p>
+          <p>Berlin · 2025</p>
+          <p class="footer-meta">placeholder@example.com</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer">
+          <ul>
+            <li><a href="index-de.html">Start</a></li>
+            <li><a href="seminars-de.html">Seminare</a></li>
+            <li><a href="about-de.html">Über mich</a></li>
+            <li><a href="contact-de.html">Kontakt</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p>Sorgsamer Umgang mit Daten.</p>
+          <p class="footer-meta">Nur zur Kontaktaufnahme.</p>
+        </div>
+      </div>
+  </footer>
+  <script src="script.js" defer></script>
+</body>
+</html>
