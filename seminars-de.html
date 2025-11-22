@@ -11,7 +11,17 @@
   <a class="skip-link" href="#main">Zum Inhalt springen</a>
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <div class="logo">Irina Ivanova</div>
+      <a href="index-de.html" class="site-profile" aria-label="Irina Ivanova">
+        <img src="images/hero-irina-portrait.svg" alt="Irina Ivanova" class="profile-avatar">
+        <div class="profile-text">
+          <div class="profile-name">Irina Ivanova</div>
+          <div class="profile-role">Psychologin und Psychotherapeutin · Berlin</div>
+        </div>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Switch language">
+        <a href="seminars.html">RU</a>
+        <a href="seminars-de.html" class="active-lang" aria-current="true">DE</a>
+      </div>
       <button class="nav-toggle" id="navToggle" aria-label="Menü">☰</button>
       <nav class="main-nav" aria-label="Hauptmenü">
         <ul>
@@ -19,11 +29,7 @@
           <li><a href="seminars-de.html" class="active">Seminare</a></li>
           <li><a href="about-de.html">Über mich</a></li>
           <li><a href="contact-de.html">Kontakt</a></li>
-          <li class="lang-switch">
-            <a href="seminars.html">RU</a>
-            <span>/</span>
-            <a href="seminars-de.html" class="active-lang" aria-current="true">DE</a>
-          </li>
+          
         </ul>
       </nav>
     </div>
@@ -36,30 +42,40 @@
 
     <section class="seminars-list container" aria-label="Seminarliste">
       <div class="card-grid">
-        <article class="card">
-          <img src="images/group-relationships.svg" alt="Seminar Beziehungen" loading="lazy">
-          <h2>Beziehungen</h2>
-          <p>Wiederkehrende Muster, Nähe, Partnerwahl. Ziel: unbewusste Strategien erkennen und gesunde Alternativen finden.</p>
+        <article class="card tile">
+          <img class="card-bg" src="images/group-relationships.svg" alt="Seminar Beziehungen" loading="lazy">
+          <div class="card-content">
+            <h2>Beziehungen</h2>
+            <p>Wiederkehrende Muster, Nähe, Partnerwahl. Ziel: unbewusste Strategien erkennen und gesunde Alternativen finden.</p>
+          </div>
         </article>
-        <article class="card">
-          <img src="images/group-wealth.svg" alt="Seminar Wohlstand" loading="lazy">
-          <h2>Wohlstand</h2>
-          <p>Innere Begrenzungen zu Geld, Erfolg, Business. Ziel: tiefes Verhältnis transformieren und Barrieren lösen.</p>
+        <article class="card tile">
+          <img class="card-bg" src="images/group-wealth.svg" alt="Seminar Wohlstand" loading="lazy">
+          <div class="card-content">
+            <h2>Wohlstand</h2>
+            <p>Innere Begrenzungen zu Geld, Erfolg, Business. Ziel: tiefes Verhältnis transformieren und Barrieren lösen.</p>
+          </div>
         </article>
-        <article class="card">
-          <img src="images/group-family.svg" alt="Seminar Familiendynamik" loading="lazy">
-          <h2>Systemische Aufstellungen. Familiendynamik</h2>
-          <p>Konflikte, Mehrgenerationen-Muster, angespannte Beziehungen. Ziel: Dynamik sehen und Wärme & Verständnis wiederherstellen.</p>
+        <article class="card tile">
+          <img class="card-bg" src="images/group-family.svg" alt="Seminar Familiendynamik" loading="lazy">
+          <div class="card-content">
+            <h2>Systemische Aufstellungen. Familiendynamik</h2>
+            <p>Konflikte, Mehrgenerationen-Muster, angespannte Beziehungen. Ziel: Dynamik sehen und Wärme & Verständnis wiederherstellen.</p>
+          </div>
         </article>
-        <article class="card">
-          <img src="images/group-any-request.svg" alt="Seminar Individuelles Anliegen" loading="lazy">
-          <h2>Dein individuelles Anliegen</h2>
-          <p>Eigene Themen. Bei Unklarheit kurze Sprechstunde zur Klärung.</p>
+        <article class="card tile">
+          <img class="card-bg" src="images/group-any-request.svg" alt="Seminar Individuelles Anliegen" loading="lazy">
+          <div class="card-content">
+            <h2>Dein individuelles Anliegen</h2>
+            <p>Eigene Themen. Bei Unklarheit kurze Sprechstunde zur Klärung.</p>
+          </div>
         </article>
-        <article class="card">
-          <img src="images/group-metaphoric.svg" alt="Seminar Metaphorische Aufstellungen" loading="lazy">
-          <h2>Metaphorische Aufstellungen</h2>
-          <p>Überlebensstrategien, automatische Reaktionen, Ressourcen. Ziel: flexiblere Muster & stützende innere Pfeiler.</p>
+        <article class="card tile">
+          <img class="card-bg" src="images/group-metaphoric.svg" alt="Seminar Metaphorische Aufstellungen" loading="lazy">
+          <div class="card-content">
+            <h2>Metaphorische Aufstellungen</h2>
+            <p>Überlebensstrategien, automatische Reaktionen, Ressourcen. Ziel: flexiblere Muster & stützende innere Pfeiler.</p>
+          </div>
         </article>
       </div>
     </section>

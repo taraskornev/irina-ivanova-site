@@ -11,7 +11,17 @@
   <a class="skip-link" href="#main">Перейти к содержимому</a>
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <div class="logo">Ирина Иванова</div>
+      <a href="index.html" class="site-profile" aria-label="Ирина Иванова">
+        <img src="images/hero-irina-portrait.svg" alt="Ирина Иванова" class="profile-avatar">
+        <div class="profile-text">
+          <div class="profile-name">Ирина Иванова</div>
+          <div class="profile-role">Психолог и психотерапевт · Берлин</div>
+        </div>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Switch language">
+        <a href="about.html" class="active-lang" aria-current="true">RU</a>
+        <a href="about-de.html">DE</a>
+      </div>
       <button class="nav-toggle" id="navToggle" aria-label="Меню">☰</button>
       <nav class="main-nav" aria-label="Главное меню">
         <ul>
@@ -19,11 +29,7 @@
           <li><a href="seminars.html">Семинары</a></li>
           <li><a href="about.html" class="active">Обо мне</a></li>
           <li><a href="contact.html">Контакты</a></li>
-          <li class="lang-switch">
-            <a href="about.html" class="active-lang" aria-current="true">RU</a>
-            <span>/</span>
-            <a href="about-de.html">DE</a>
-          </li>
+          
         </ul>
       </nav>
     </div>
