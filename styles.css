@@ -64,8 +64,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* Header profile block (without avatar) */
 .site-profile { display: flex; align-items: center; gap: var(--space-xs); min-width: 0; text-decoration: none; }
 .site-profile-text { display: flex; flex-direction: column; min-width: 0; }
-.site-logo { width: 40px; height: 40px; border-radius: none; background: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-footer-bg); }
-.site-logo-img { width: 40px; height: 40px; display: block; fill:#1f5b62; color: var(--color-footer-bg); }
+.site-logo { width: 40px; height: 40px; border-radius: 0; background: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.site-logo-img { width: 40px; height: 40px; display: block; filter: brightness(0) saturate(100%) invert(29%) sepia(36%) saturate(1027%) hue-rotate(149deg) brightness(92%) contrast(89%); }
 .profile-name { font-weight:600; font-size: 1.4rem; line-height:1.2; }
 .profile-role { font-size: 0.8rem; color: var(--color-text-secondary); }
 .main-nav { margin-left: auto; }
