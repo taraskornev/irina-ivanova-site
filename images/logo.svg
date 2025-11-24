@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="currentColor">
+  <!-- Left I -->
+  <rect x="8" y="7" width="3" height="18" rx="1.5" />
+  <circle cx="9.5" cy="5" r="1.5" />
+  <!-- Right I -->
+  <rect x="19" y="7" width="3" height="18" rx="1.5" />
+  <circle cx="20.5" cy="5" r="1.5" />
+</svg>

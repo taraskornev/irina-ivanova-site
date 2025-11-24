@@ -59,11 +59,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .container { width: 100%; margin: 0 auto; padding-inline: var(--space-m); max-width: var(--max-width); }
 
 /* Header */
-.site-header { position: sticky; top: 0; z-index: 100; background: rgba(247,247,248,0.95); backdrop-filter: blur(12px); border-bottom: 1px solid #e0e0e0; }
+.site-header { position: sticky; top: 0; z-index: 100; background: rgba(247,247,248,0.80); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #e0e0e0; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-m); min-height: 70px; padding-inline: var(--space-m); }
 /* Header profile block (without avatar) */
-.site-profile { display: flex; flex-direction: column; min-width: 0; }
-.profile-name { font-weight:600; font-size: 1.8rem; line-height:1.2; }
+.site-profile { display: flex; align-items: center; gap: var(--space-xs); min-width: 0; text-decoration: none; }
+.site-profile-text { display: flex; flex-direction: column; min-width: 0; }
+.site-logo { width: 40px; height: 40px; border-radius: none; background: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--color-footer-bg); }
+.site-logo-img { width: 40px; height: 40px; display: block; fill:#1f5b62; color: var(--color-footer-bg); }
+.profile-name { font-weight:600; font-size: 1.4rem; line-height:1.2; }
 .profile-role { font-size: 0.8rem; color: var(--color-text-secondary); }
 .main-nav { margin-left: auto; }
 .header-right { display: flex; align-items: center; gap: var(--space-s); }
