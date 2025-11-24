@@ -60,22 +60,22 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* Header */
 .site-header { position: sticky; top: 0; z-index: 100; background: rgba(247,247,248,0.80); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-bottom: 1px solid #e0e0e0; }
-.header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-m); min-height: 70px; padding-inline: var(--space-m); }
+.header-inner { display: flex; align-items: center; justify-content: space-between; gap: var(--space-m); min-height: 60px; padding-inline: var(--space-m); }
 /* Header profile block (without avatar) */
 .site-profile { display: flex; align-items: center; gap: var(--space-xs); min-width: 0; text-decoration: none; }
 .site-profile-text { display: flex; flex-direction: column; min-width: 0; }
 .site-logo { width: 40px; height: 40px; border-radius: 0; background: none; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .site-logo-img { width: 40px; height: 40px; display: block; filter: brightness(0) saturate(100%) invert(29%) sepia(36%) saturate(1027%) hue-rotate(149deg) brightness(92%) contrast(89%); }
-.profile-name { font-weight:600; font-size: 1.4rem; line-height:1.2; }
-.profile-role { font-size: 0.8rem; color: var(--color-text-secondary); }
+.profile-name { font-weight:600; font-size: 1.2rem; line-height:1.2; }
+.profile-role { font-size: 0.75rem; color: var(--color-text-secondary); }
 .main-nav { margin-left: auto; }
 .header-right { display: flex; align-items: center; gap: var(--space-s); }
-.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--space-s); align-items: center; }
+.main-nav ul { list-style: none; margin: 0; padding: 0; display: flex; gap: var(--space-xs); align-items: center; }
 .main-nav a { padding: 0.5rem 0.9rem; border-radius: var(--radius-pill); font-size: 0.9rem; font-weight:500; line-height:1.2; transition: background var(--transition), color var(--transition); }
 .main-nav a:hover { background: var(--color-footer-bg); color: #fff; }
 .main-nav a.active { background: var(--color-footer-bg); color: #fff; }
 .lang-switch { display: inline-flex; align-items: center; gap: 0.2rem; color: var(--color-footer-bg-hover) }
-.lang-switch a { padding: 0.4rem 0.3rem; border-radius: var(--radius-sm); font-size:0.8rem; font-weight:600; color: var(--color-text-secondary); background: transparent; border: none; transition: background .25s ease, color .25s ease, border-color .25s ease; }
+.lang-switch a { padding: 0.4rem 0.2rem; border-radius: var(--radius-sm); font-size:0.8rem; font-weight:600; color: var(--color-text-secondary); background: transparent; border: none; transition: background .25s ease, color .25s ease, border-color .25s ease; }
 .lang-switch a:hover { color: var(--color-text-secondary); border-color: none; font-weight:700; }
 .lang-switch a.active-lang { background: none; color: var(--color-footer-bg-hover); border-color: var(--color-footer-bg); font-weight:700;}
 .nav-toggle { display: none; width: 40px; height: 40px; color: var(--color-footer-bg); border: 0px solid #e0ece9; border-radius: 8px; cursor: pointer; font-size:1.5rem; line-height: 1; align-items: center; justify-content: center; }
