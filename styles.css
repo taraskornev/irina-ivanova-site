@@ -230,6 +230,31 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .sprechstunde h2 { margin-top:0; margin-bottom: var(--space-s); font-weight:600; }
 .sprechstunde p { margin-top: 0; margin-bottom: var(--space-s); }
 
+/* Seminar detail pages */
+.seminar-hero-wrapper { padding: var(--space-l) 0; padding-inline: var(--space-m); }
+.seminar-hero-card { position: relative; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; border-radius: var(--radius-md); min-height: 320px; background: #e3e4e6; opacity: 0; animation: fadeInUp 0.5s ease forwards; animation-delay: 0.1s; }
+.seminar-hero-card img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.seminar-hero-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 40%, rgba(0,0,0,0) 70%); z-index: 1; }
+.seminar-hero-content { position: relative; z-index: 2; padding: var(--space-l) var(--space-m); color: #fff; }
+.seminar-hero-content h1 { margin: 0 0 var(--space-xs) 0; font-size: clamp(1.8rem,4vw,2.5rem); line-height: var(--line-height-tight); font-weight: 600; color: #fff; }
+.seminar-hero-content p { margin: 0; font-size: 1rem; line-height: 1.4; color: #fff; opacity: 0.95; }
+
+.seminar-content { padding: var(--space-l) 0; padding-inline: var(--space-m); }
+.seminar-section-card { background: #fff; border: 1px solid #e6efed; border-radius: var(--radius-sm); padding: var(--space-m); margin-bottom: var(--space-m); opacity: 0; animation: fadeInUp 0.4s ease forwards; transition: box-shadow 0.25s ease; }
+.seminar-section-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.seminar-section-card h2, .seminar-section-card h3 { margin-top: 0; margin-bottom: var(--space-s); font-weight: 600; font-size: 1.15rem; }
+.seminar-section-card p { margin-top: 0; margin-bottom: var(--space-s); line-height: var(--line-height-base); }
+.seminar-section-card ul { margin: 0; padding-left: 1.5rem; }
+.seminar-section-card li { margin-bottom: var(--space-xs); line-height: var(--line-height-base); }
+.seminar-section-card:nth-child(1) { animation-delay: 0.15s; }
+.seminar-section-card:nth-child(2) { animation-delay: 0.2s; }
+.seminar-section-card:nth-child(3) { animation-delay: 0.25s; }
+.seminar-section-card:nth-child(4) { animation-delay: 0.3s; }
+.seminar-section-card:nth-child(5) { animation-delay: 0.35s; }
+
+.seminar-cta { padding: var(--space-xl) 0; padding-inline: var(--space-m); text-align: center; }
+.seminar-cta .btn { opacity: 0; animation: fadeInUp 0.4s ease forwards; animation-delay: 0.4s; }
+
 /* Contact */
 .contact-intro { padding: var(--space-xl) 0 var(--space-m); padding-inline: var(--space-m); max-width: 700px; margin: 0 auto; }
 .contact-intro h1 { font-weight:600; margin-top:0; margin-bottom: var(--space-m); }
@@ -289,6 +314,13 @@ input:focus, textarea:focus { border-color: var(--color-accent); }
   .contact-intro, .contact-content { padding-inline: var(--space-s); }
   .contact-form-wrapper form { padding: var(--space-s); }
   .footer-flex { grid-template-columns: 1fr 1fr; }
+  .seminar-hero-wrapper { padding-inline: var(--space-s); }
+  .seminar-hero-card { min-height: 280px; }
+  .seminar-hero-content { padding: var(--space-m) var(--space-s); }
+  .seminar-hero-content h1 { font-size: clamp(1.5rem,5vw,2rem); }
+  .seminar-content { padding-inline: var(--space-s); }
+  .seminar-section-card { padding: var(--space-s); }
+  .seminar-cta { padding-inline: var(--space-s); }
 }
 
 @media (max-width: 480px) {
