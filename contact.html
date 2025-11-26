@@ -40,7 +40,7 @@
   <main id="main">
     <section class="contact-intro container" aria-labelledby="contact-title">
       <h1 id="contact-title">Контакты</h1>
-      <p>Свяжитесь, чтобы записаться на консультацию или задать вопросы. Доступны онлайн и очные встречи в Берлине.</p>
+      <p>Свяжитесь для консультации или вопросов. Доступны онлайн и очные встречи в Берлине.</p>
     </section>
 
     <div class="contact-content">
@@ -49,6 +49,18 @@
         <p><strong>Email:</strong> <a href="mailto:placeholder@example.com">placeholder@example.com</a></p>
         <p><strong>Локация:</strong> Берлин · Онлайн / Очно</p>
         <p><strong>Подход:</strong> Индивидуально подобранная интегративная терапия.</p>
+        
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155421.15783087494!2d13.239166949999998!3d52.5065133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin%2C%20Germany!5e0!3m2!1sen!2s!4v1732618800000!5m2!1sen!2s"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
       <div class="contact-form-wrapper">
         <h2>Форма</h2>
@@ -73,7 +85,7 @@
     </div>
   </main>
   <footer class="site-footer" role="contentinfo">
-    <div class="container footer-flex">
+    <div class="container footer-inner">
       <p>© 2025 Dr. med. Ирина Иванова</p>
       <nav class="footer-links">
         <a href="impressum.html">Impressum</a>
@@ -81,6 +93,7 @@
       </nav>
     </div>
   </footer>
+  <div class="method-tooltip" aria-hidden="true" role="tooltip"></div>
   <script src="script.js" defer></script>
 </body>
 </html>
