@@ -126,10 +126,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+    // Анимация для карточек семинаров 2x2
+    const featureCards = document.querySelectorAll('.seminar-feature-card');
+    if (featureCards.length > 0) {
+      const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            cardObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      });
+      
+      featureCards.forEach(card => cardObserver.observe(card));
+    }
   } else {
     // Если reduced motion включен, сразу показываем все элементы
     const revealElements = document.querySelectorAll('.reveal-on-scroll');
     revealElements.forEach(el => el.classList.add('is-visible'));
+    
+    const featureCards = document.querySelectorAll('.seminar-feature-card');
+    featureCards.forEach(card => card.classList.add('is-visible'));
   }
 
   // ========================================
