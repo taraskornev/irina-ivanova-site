@@ -17,7 +17,7 @@
         </div>
         <div class="site-profile-text">
           <div class="profile-name">Ирина Иванова</div>
-          <div class="profile-role">Психолог и психотерапевт · Берлин</div>
+          <div class="profile-role">Психолог и психотерапевт&nbsp;· Берлин</div>
         </div>
       </a>
       <nav class="main-nav" aria-label="Главное меню">
@@ -45,11 +45,6 @@
 
     <div class="contact-content">
       <div class="contact-info">
-        <h2>Данные</h2>
-        <p><strong>Email:</strong> <a href="mailto:placeholder@example.com">placeholder@example.com</a></p>
-        <p><strong>Локация:</strong> Берлин · Онлайн / Очно</p>
-        <p><strong>Подход:</strong> Индивидуально подобранная интегративная терапия.</p>
-        
         <div class="contact-map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155421.15783087494!2d13.239166949999998!3d52.5065133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin%2C%20Germany!5e0!3m2!1sen!2s!4v1732618800000!5m2!1sen!2s"
@@ -63,7 +58,7 @@
         </div>
       </div>
       <div class="contact-form-wrapper">
-        <h2>Форма</h2>
+        <h2>Задайте мне вопрос</h2>
         <form id="contactForm" novalidate>
           <div class="form-group">
             <label for="name">Имя</label>
@@ -94,6 +89,21 @@
     </div>
   </footer>
   <div class="method-tooltip" aria-hidden="true" role="tooltip"></div>
+  
+  <!-- Cookie Consent Modal -->
+  <div class="cookie-modal" id="cookieModal" role="dialog" aria-labelledby="cookieTitle" aria-hidden="true">
+    <div class="cookie-overlay"></div>
+    <div class="cookie-content">
+      <h3 id="cookieTitle">Мы ценим вашу приватность</h3>
+      <p>Этот сайт использует cookies для улучшения вашего опыта. Вы можете принять или отклонить их использование.</p>
+      <a href="privacy.html" class="cookie-link">Подробнее о cookies и приватности</a>
+      <div class="cookie-buttons">
+        <button class="btn primary cookie-accept" id="cookieAccept">Принимаю cookies</button>
+        <button class="btn secondary cookie-decline" id="cookieDecline">Отклоняю</button>
+      </div>
+    </div>
+  </div>
+  
   <script src="script.js" defer></script>
 </body>
 </html>

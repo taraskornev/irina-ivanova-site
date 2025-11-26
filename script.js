@@ -136,7 +136,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // METHOD TOOLTIPS
   // ========================================
   const tooltip = document.querySelector('.method-tooltip');
-  const methodItems = document.querySelectorAll('.method-list li[data-description]');
+  const methodItems = document.querySelectorAll('.method-label[data-description]');
   
   if (tooltip && methodItems.length > 0) {
     let currentItem = null;
@@ -230,7 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('mouseleave', hideTooltip);
       }
       
-      // Mobile: tap/click
+      // Mobile: tap/click - показывать тултип сразу при первом тапе
       item.addEventListener('click', (e) => {
         if (isTouchDevice()) {
           e.preventDefault();
@@ -238,15 +238,17 @@ document.addEventListener('DOMContentLoaded', () => {
             hideTooltip();
           } else {
             hideTooltip();
-            setTimeout(() => showTooltip(item, e.clientX, e.clientY, true), 10);
+            showTooltip(item, e.clientX, e.clientY, true);
           }
         }
       });
       
-      // Keyboard: focus/blur
+      // Keyboard: focus - показывать тултип сразу при фокусе
       item.addEventListener('focus', (e) => {
-        const rect = item.getBoundingClientRect();
-        showTooltip(item, rect.left + rect.width / 2, rect.bottom, true);
+        if (!isTouchDevice()) {
+          const rect = item.getBoundingClientRect();
+          showTooltip(item, rect.left + rect.width / 2, rect.bottom, true);
+        }
       });
       
       item.addEventListener('blur', hideTooltip);
@@ -254,9 +256,53 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Закрытие при клике вне элемента (мобильный)
     document.addEventListener('click', (e) => {
-      if (isTouchDevice() && currentItem && !e.target.closest('.method-list li')) {
+      if (isTouchDevice() && currentItem && !e.target.closest('.method-label')) {
         hideTooltip();
       }
     });
+  }
+  
+  // ========================================
+  // COOKIE CONSENT MODAL
+  // ========================================
+  const cookieModal = document.getElementById('cookieModal');
+  const cookieAccept = document.getElementById('cookieAccept');
+  const cookieDecline = document.getElementById('cookieDecline');
+  
+  if (cookieModal && cookieAccept && cookieDecline) {
+    // Проверяем, есть ли уже выбор в localStorage
+    const cookieConsent = localStorage.getItem('cookieConsent');
+    
+    if (!cookieConsent) {
+      // Если выбора нет, показываем модалку
+      setTimeout(() => {
+        cookieModal.classList.add('show');
+        cookieModal.setAttribute('aria-hidden', 'false');
+      }, 500);
+    }
+    
+    // Обработчик принятия cookies
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'accepted');
+      cookieModal.classList.remove('show');
+      cookieModal.setAttribute('aria-hidden', 'true');
+    });
+    
+    // Обработчик отклонения cookies
+    cookieDecline.addEventListener('click', () => {
+      localStorage.setItem('cookieConsent', 'declined');
+      cookieModal.classList.remove('show');
+      cookieModal.setAttribute('aria-hidden', 'true');
+    });
+    
+    // Закрытие по клику на overlay
+    const overlay = cookieModal.querySelector('.cookie-overlay');
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        localStorage.setItem('cookieConsent', 'declined');
+        cookieModal.classList.remove('show');
+        cookieModal.setAttribute('aria-hidden', 'true');
+      });
+    }
   }
 });

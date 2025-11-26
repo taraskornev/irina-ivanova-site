@@ -17,7 +17,7 @@
         </div>
         <div class="site-profile-text">
           <div class="profile-name">Irina Ivanova</div>
-          <div class="profile-role">Psychologin und Psychotherapeutin · Berlin</div>
+          <div class="profile-role">Psychologin und Psychotherapeutin&nbsp;· Berlin</div>
         </div>
       </a>
       <nav class="main-nav" aria-label="Hauptmenü">
@@ -45,13 +45,20 @@
 
     <div class="contact-content">
       <div class="contact-info">
-        <h2>Daten</h2>
-        <p><strong>E-Mail:</strong> <a href="mailto:placeholder@example.com">placeholder@example.com</a></p>
-        <p><strong>Ort:</strong> Berlin · Online / Vor Ort</p>
-        <p><strong>Ansatz:</strong> Individuell abgestimmte integrative Therapie.</p>
+        <div class="contact-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d155421.15783087494!2d13.239166949999998!3d52.5065133!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47a84e373f035901%3A0x42120465b5e3b70!2sBerlin%2C%20Germany!5e0!3m2!1sen!2s!4v1732618800000!5m2!1sen!2s"
+            width="100%"
+            height="300"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
       </div>
       <div class="contact-form-wrapper">
-        <h2>Formular</h2>
+        <h2>Stellen Sie mir Ihre Frage</h2>
         <form id="contactForm" novalidate>
           <div class="form-group">
             <label for="name">Name</label>
@@ -81,6 +88,21 @@
       </nav>
     </div>
   </footer>
+  
+  <!-- Cookie Consent Modal -->
+  <div class="cookie-modal" id="cookieModal" role="dialog" aria-labelledby="cookieTitle" aria-hidden="true">
+    <div class="cookie-overlay"></div>
+    <div class="cookie-content">
+      <h3 id="cookieTitle">Wir schätzen Ihre Privatsphäre</h3>
+      <p>Diese Website verwendet Cookies, um Ihr Erlebnis zu verbessern. Sie können deren Verwendung akzeptieren oder ablehnen.</p>
+      <a href="privacy-de.html" class="cookie-link">Mehr über Cookies und Datenschutz</a>
+      <div class="cookie-buttons">
+        <button class="btn primary cookie-accept" id="cookieAccept">Cookies akzeptieren</button>
+        <button class="btn secondary cookie-decline" id="cookieDecline">Ablehnen</button>
+      </div>
+    </div>
+  </div>
+  
   <script src="script.js" defer></script>
 </body>
 </html>

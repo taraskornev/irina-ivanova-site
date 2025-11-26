@@ -17,7 +17,7 @@
         </div>
         <div class="site-profile-text">
           <div class="profile-name">Ирина Иванова</div>
-          <div class="profile-role">Психолог и психотерапевт · Берлин</div>
+          <div class="profile-role">Психолог и психотерапевт&nbsp;· Берлин</div>
         </div>
       </a>
       <nav class="main-nav" aria-label="Главное меню">
@@ -55,16 +55,16 @@
     <section class="methods container" aria-labelledby="methods-title">
       <h2 id="methods-title">Методы</h2>
       <ul class="method-list" role="list">
-        <li data-description="Работа с бессознательными процессами и внутренними конфликтами через длительную глубинную терапию.">Психоанализ</li>
-        <li data-description="Исследование психодинамики, защитных механизмов и паттернов отношений с акцентом на перенос.">Глубинная психодинамическая терапия</li>
-        <li data-description="Работа с мыслями, убеждениями и поведением. Практичный подход к изменению дисфункциональных паттернов.">Когнитивно-поведенческая терапия (КПТ)</li>
-        <li data-description="Десенсибилизация и переработка травматичных воспоминаний через движения глаз. Эффективен при ПТСР.">Травматерапия, ДПДГ, EMDR, Brainspotting</li>
-        <li data-description="Работа с семейной динамикой через пространственное расположение заместителей. Выявление скрытых лояльностей.">Системные терапевтические расстановки</li>
-        <li data-description="Фокусированная работа с конкретным запросом. Достижение результата за несколько сессий.">Краткосрочная интенсивная терапия</li>
-        <li data-description="Работа с телесными ощущениями и эмоциями. Техника эмоциональной свободы для снятия блоков.">Телесно-ориентированная терапия, EFT</li>
-        <li data-description="Использование внутренних образов и метафор для доступа к бессознательным ресурсам и решениям.">Имагинативная (образная) терапия</li>
-        <li data-description="Использование юмора и провокации для выхода из защитных паттернов и обнаружения новых перспектив.">Провокационная терапия</li>
-        <li data-description="Работа с экзистенциальными вопросами, поиск смысла в переживаниях и создание нового нарратива.">Meaning-making (терапия смыслов)</li>
+        <li><span class="method-label" data-description="Работа с бессознательными процессами и внутренними конфликтами через длительную глубинную терапию.">Психоанализ</span></li>
+        <li><span class="method-label" data-description="Исследование психодинамики, защитных механизмов и паттернов отношений с акцентом на перенос.">Глубинная психодинамическая терапия</span></li>
+        <li><span class="method-label" data-description="Работа с мыслями, убеждениями и поведением. Практичный подход к изменению дисфункциональных паттернов.">Когнитивно-поведенческая терапия (КПТ)</span></li>
+        <li><span class="method-label" data-description="Десенсибилизация и переработка травматичных воспоминаний через движения глаз. Эффективен при ПТСР.">Травматерапия, ДПДГ, EMDR, Brainspotting</span></li>
+        <li><span class="method-label" data-description="Работа с семейной динамикой через пространственное расположение заместителей. Выявление скрытых лояльностей.">Системные терапевтические расстановки</span></li>
+        <li><span class="method-label" data-description="Фокусированная работа с конкретным запросом. Достижение результата за несколько сессий.">Краткосрочная интенсивная терапия</span></li>
+        <li><span class="method-label" data-description="Работа с телесными ощущениями и эмоциями. Техника эмоциональной свободы для снятия блоков.">Телесно-ориентированная терапия, EFT</span></li>
+        <li><span class="method-label" data-description="Использование внутренних образов и метафор для доступа к бессознательным ресурсам и решениям.">Имагинативная (образная) терапия</span></li>
+        <li><span class="method-label" data-description="Использование юмора и провокации для выхода из защитных паттернов и обнаружения новых перспектив.">Провокационная терапия</span></li>
+        <li><span class="method-label" data-description="Работа с экзистенциальными вопросами, поиск смысла в переживаниях и создание нового нарратива.">Meaning-making (терапия смыслов)</span></li>
       </ul>
     </section>
 
@@ -91,8 +91,8 @@
     </section>
 
     <section class="final-cta container" aria-labelledby="about-cta-title">
-      <h2 id="about-cta-title">Начать терапию</h2>
-      <p>Готовы начать процесс? Свяжитесь для консультации.</p>
+      <h2 id="about-cta-title">Готовы к консультации?</h2>
+      <p>Свяжитесь для первой встречи или вопросов.</p>
       <a class="btn primary" href="contact.html">Связаться</a>
     </section>
   </main>
@@ -106,6 +106,21 @@
     </div>
   </footer>
   <div class="method-tooltip" aria-hidden="true" role="tooltip"></div>
+  
+  <!-- Cookie Consent Modal -->
+  <div class="cookie-modal" id="cookieModal" role="dialog" aria-labelledby="cookieTitle" aria-hidden="true">
+    <div class="cookie-overlay"></div>
+    <div class="cookie-content">
+      <h3 id="cookieTitle">Мы ценим вашу приватность</h3>
+      <p>Этот сайт использует cookies для улучшения вашего опыта. Вы можете принять или отклонить их использование.</p>
+      <a href="privacy.html" class="cookie-link">Подробнее о cookies и приватности</a>
+      <div class="cookie-buttons">
+        <button class="btn primary cookie-accept" id="cookieAccept">Принимаю cookies</button>
+        <button class="btn secondary cookie-decline" id="cookieDecline">Отклоняю</button>
+      </div>
+    </div>
+  </div>
+  
   <script src="script.js" defer></script>
 </body>
 </html>
