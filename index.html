@@ -5,20 +5,13 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Ирина Иванова — Психотерапевт в Берлине</title>
   <meta name="description" content="Психотерапевт Ирина Иванова (Берлин). 20+ лет опыта. Индивидуальная интегративная психотерапия и системные семинары." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="lang.js"></script>
 </head>
 <body>
   <a class="skip-link" href="#main">Перейти к содержимому</a>
   <header class="site-header" role="banner">
     <div class="container header-inner">
       <a href="index.html" class="site-profile" aria-label="Ирина Иванова">
-        <div class="site-logo" aria-hidden="true">
-          <img src="images/irina_logo-01.svg" alt="" class="site-logo-img" loading="lazy" />
-        </div>
         <div class="site-profile-text">
           <div class="profile-name">Ирина Иванова</div>
           <div class="profile-role">Психолог и психотерапевт&nbsp;· Берлин</div>
@@ -138,10 +131,28 @@
     </section>
 
     <section class="testimonial container reveal-on-scroll" aria-labelledby="testimonial-title">
-      <h2 id="testimonial-title">Отзыв</h2>
-      <blockquote>
-        <p>Работа Ирины сочетает любовь и мудрость, помогает увидеть глубину и взаимосвязи, возвращает ощущение внутреннего порядка и человечности там, где была боль и хаос.</p>
-      </blockquote>
+      <h2 id="testimonial-title">Отзывы</h2>
+      <div class="testimonial-carousel">
+        <button class="carousel-btn prev" aria-label="Предыдущий отзыв">‹</button>
+        <div class="testimonial-track">
+          <div class="testimonial-slide">
+            <blockquote>
+              <p>Работа Ирины сочетает любовь и мудрость, помогает увидеть глубину и взаимосвязи, возвращает ощущение внутреннего порядка и человечности там, где была боль и хаос.</p>
+            </blockquote>
+          </div>
+          <div class="testimonial-slide">
+            <blockquote>
+              <p>Глубокий профессионализм и внимательность. Ирина помогла найти корень проблемы и показала путь к изменениям, которые я не видела раньше.</p>
+            </blockquote>
+          </div>
+          <div class="testimonial-slide">
+            <blockquote>
+              <p>После работы с Ириной я почувствовала настоящую опору и ясность. Методы деликатные, но очень эффективные.</p>
+            </blockquote>
+          </div>
+        </div>
+        <button class="carousel-btn next" aria-label="Следующий отзыв">›</button>
+      </div>
     </section>
 
     <section class="faq container reveal-on-scroll" aria-labelledby="faq-title">
@@ -180,20 +191,6 @@
     </div>
   </footer>
   <div class="method-tooltip" aria-hidden="true" role="tooltip"></div>
-  
-  <!-- Cookie Consent Modal -->
-  <div class="cookie-modal" id="cookieModal" role="dialog" aria-labelledby="cookieTitle" aria-hidden="true">
-    <div class="cookie-overlay"></div>
-    <div class="cookie-content">
-      <h3 id="cookieTitle">Мы ценим вашу приватность</h3>
-      <p>Вы можете принять или отклонить использование cookies. <a href="cookies-ru.html" class="cookie-link">Подробнее</a></p>
-      <div class="cookie-buttons">
-        <button class="btn primary cookie-accept" id="cookieAccept">Принимаю cookies</button>
-        <button class="btn secondary cookie-decline" id="cookieDecline">Отклоняю</button>
-      </div>
-    </div>
-  </div>
-  
   <script src="script.js" defer></script>
 </body>
 </html>

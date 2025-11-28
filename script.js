@@ -325,4 +325,38 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
   }
+
+  // ========================================
+  // TESTIMONIAL CAROUSEL
+  // ========================================
+  const carousel = document.querySelector('.testimonial-carousel');
+  if (carousel) {
+    const track = carousel.querySelector('.testimonial-track');
+    const slides = carousel.querySelectorAll('.testimonial-slide');
+    const prevBtn = carousel.querySelector('.carousel-btn.prev');
+    const nextBtn = carousel.querySelector('.carousel-btn.next');
+    
+    let currentIndex = 0;
+    const totalSlides = slides.length;
+    
+    function updateCarousel() {
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+    
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % totalSlides;
+      updateCarousel();
+    }
+    
+    function prevSlide() {
+      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    }
+    
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    
+    // Auto-advance every 8 seconds
+    setInterval(nextSlide, 8000);
+  }
 });
