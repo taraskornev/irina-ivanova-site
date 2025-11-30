@@ -111,7 +111,8 @@ h1, h2, h3, h4, h5, h6,
   padding: var(--space-xl) 0 var(--space-l);
   margin-bottom: var(--space-xl);
   min-height: 480px;
-  background: linear-gradient(to bottom, #4a4a4a 0%, #6a6a6a 40%, #9a9a9a 100%);
+  background: url('images/ComfyUI_temp_lnfiq_00002_.jpg') no-repeat center center;
+  background-size: cover; 
 }
 
 @media (min-width: 1024px) {
@@ -260,58 +261,179 @@ h1, h2, h3, h4, h5, h6,
 .card.tile .text-link:hover { text-decoration: underline; }
 
 /* Testimonial Carousel */
-.testimonial { padding: var(--space-xl) 0 var(--space-l); padding-inline: var(--space-m); position: relative; }
-.testimonial h2 { font-weight:600; margin-top: 0; margin-bottom: var(--space-m); text-align: center; }
-.testimonial-carousel { position: relative; max-width: 700px; margin: 0 auto; }
-.testimonial-track { display: flex; overflow: hidden; position: relative; }
-.testimonial-slide { min-width: 100%; transition: transform 0.5s ease; }
-.testimonial blockquote { margin: 0; padding: var(--space-m); background: #ffffff; border: 1px solid #ececec; border-radius: var(--radius-md); font-style: italic; line-height: var(--line-height-base); position: relative; }
-.testimonial blockquote::before { content: '"'; position: absolute; top: -5px; left: 15px; font-size: 3rem; line-height: 1; color: var(--color-footer-bg); opacity: 1; font-family: Georgia, serif; font-weight: 700; }
-.testimonial blockquote::after { content: '"'; position: absolute; bottom: -15px; right: 15px; font-size: 3rem; line-height: 1; color: var(--color-footer-bg); opacity: 1; font-family: Georgia, serif; font-weight: 700; }
+.testimonial {
+  padding: var(--space-xl) 0 var(--space-l);
+  padding-inline: var(--space-m);
+}
 
-.carousel-btn {
+.testimonial h2 {
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: var(--space-m);
+  text-align: center;
+}
+
+.testimonial-carousel {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-m);
+}
+
+/* Карточка отзывов */
+.testimonial-track {
+  flex: 1;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+  padding: var(--space-l) var(--space-l);
+  position: relative;
+  overflow: hidden;
+  min-height: 160px;
+}
+
+/* Базовое состояние всех слайдов — поверх друг друга и скрыты */
+.testimonial-slide {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--color-footer-bg);
-  color: white;
-  border: none;
+  inset: var(--space-l);
+  opacity: 0;
+  transform: translateY(8px);
+  pointer-events: none;
+}
+
+/* Активный слайд */
+.testimonial-slide.is-active {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Анимационные классы в стиле crossfade */
+.testimonial-slide.is-entering-from-next {
+  animation: testimonial-enter-from-next 0.45s ease forwards;
+}
+
+.testimonial-slide.is-entering-from-prev {
+  animation: testimonial-enter-from-prev 0.45s ease forwards;
+}
+
+.testimonial-slide.is-leaving-to-next {
+  animation: testimonial-leave-to-next 0.35s ease forwards;
+}
+
+.testimonial-slide.is-leaving-to-prev {
+  animation: testimonial-leave-to-prev 0.35s ease forwards;
+}
+
+.testimonial-slide p {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: var(--line-height-base);
+}
+
+/* Кавычка-фон */
+.testimonial-track::before {
+  content: '"';
+  position: absolute;
+  top: 8px;
+  left: 18px;
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--color-footer-bg);
+  opacity: 0.15;
+  font-family: "Playfair Display", Georgia, serif;
+  font-weight: 700;
+}
+
+/* Стрелки снаружи карточки */
+.carousel-btn {
+  align-self: center;
+  background: transparent;
+  border: 1px solid #d0d0d0;
+  color: var(--color-text-secondary);
   width: 40px;
   height: 40px;
-  border-radius: 50%;
+  border-radius: 999px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: 1.2rem;
-  transition: background 0.2s ease, transform 0.2s ease;
-  z-index: 10;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 
 .carousel-btn:hover {
-  background: var(--color-footer-bg-hover);
-  transform: translateY(-50%) scale(1.1);
+  background: #f2f2f2;
+  color: var(--color-text);
+  border-color: #c0c0c0;
+  transform: translateY(-1px);
 }
 
-.carousel-btn.prev {
-  left: -50px;
+/* Ключевые кадры: лёгкий сдвиг + fade, как cross-анимация */
+
+@keyframes testimonial-enter-from-next {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.carousel-btn.next {
-  right: -50px;
+@keyframes testimonial-enter-from-prev {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes testimonial-leave-to-next {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes testimonial-leave-to-prev {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(8px);
+  }
 }
 
 @media (max-width: 768px) {
+  .testimonial-carousel {
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .testimonial-track {
+    padding: var(--space-l) var(--space-m);
+  }
+
+  .testimonial-slide {
+    inset: var(--space-m);
+  }
+
   .carousel-btn {
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-  }
-  .carousel-btn.prev {
-    left: 10px;
-  }
-  .carousel-btn.next {
-    right: 10px;
+    width: 36px;
+    height: 36px;
   }
 }
 

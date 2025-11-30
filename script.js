@@ -327,36 +327,127 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================
-  // TESTIMONIAL CAROUSEL
+  // TESTIMONIAL CAROUSEL - CROSSFADE
   // ========================================
-  const carousel = document.querySelector('.testimonial-carousel');
-  if (carousel) {
-    const track = carousel.querySelector('.testimonial-track');
-    const slides = carousel.querySelectorAll('.testimonial-slide');
-    const prevBtn = carousel.querySelector('.carousel-btn.prev');
-    const nextBtn = carousel.querySelector('.carousel-btn.next');
-    
-    let currentIndex = 0;
-    const totalSlides = slides.length;
-    
-    function updateCarousel() {
-      track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    }
-    
-    function nextSlide() {
-      currentIndex = (currentIndex + 1) % totalSlides;
-      updateCarousel();
-    }
-    
-    function prevSlide() {
-      currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
-      updateCarousel();
-    }
-    
-    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
-    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
-    
-    // Auto-advance every 8 seconds
-    setInterval(nextSlide, 8000);
+  const testimonialSection = document.querySelector('.testimonial');
+  if (!testimonialSection) return;
+
+  const slides = Array.from(testimonialSection.querySelectorAll('.testimonial-slide'));
+  const prevBtn = testimonialSection.querySelector('.carousel-btn.prev');
+  const nextBtn = testimonialSection.querySelector('.carousel-btn.next');
+
+  if (!slides.length || !prevBtn || !nextBtn) return;
+
+  let currentIndex = 0;
+  let isAnimating = false;
+
+  function setInitialSlide() {
+    slides.forEach((slide, index) => {
+      slide.classList.remove(
+        'is-active',
+        'is-entering-from-next',
+        'is-entering-from-prev',
+        'is-leaving-to-next',
+        'is-leaving-to-prev'
+      );
+      if (index === 0) {
+        slide.classList.add('is-active');
+      }
+    });
   }
+
+  function goToSlide(newIndex, direction) {
+    if (isAnimating) return;
+
+    const total = slides.length;
+    const nextIndex = (newIndex + total) % total;
+    if (nextIndex === currentIndex) return;
+
+    isAnimating = true;
+
+    const currentSlide = slides[currentIndex];
+    const nextSlide = slides[nextIndex];
+
+    slides.forEach((slide) => {
+      slide.classList.remove(
+        'is-active',
+        'is-entering-from-next',
+        'is-entering-from-prev',
+        'is-leaving-to-next',
+        'is-leaving-to-prev'
+      );
+    });
+
+    let leaveClass;
+    let enterClass;
+
+    if (direction === 'next') {
+      leaveClass = 'is-leaving-to-next';
+      enterClass = 'is-entering-from-next';
+    } else {
+      leaveClass = 'is-leaving-to-prev';
+      enterClass = 'is-entering-from-prev';
+    }
+
+    currentSlide.classList.add(leaveClass);
+    nextSlide.classList.add(enterClass);
+
+    const onAnimationEnd = () => {
+      nextSlide.classList.remove(enterClass);
+      nextSlide.classList.add('is-active');
+      currentSlide.classList.remove(leaveClass);
+
+      currentSlide.removeEventListener('animationend', onAnimationEnd);
+      currentIndex = nextIndex;
+      isAnimating = false;
+    };
+
+    currentSlide.addEventListener('animationend', onAnimationEnd);
+  }
+
+  prevBtn.addEventListener('click', () => {
+    goToSlide(currentIndex - 1, 'prev');
+  });
+
+  nextBtn.addEventListener('click', () => {
+    goToSlide(currentIndex + 1, 'next');
+  });
+
+  setInitialSlide();
+
+  // ==== FAQ SMOOTH TOGGLE ====
+  const faqDetails = document.querySelectorAll('.faq details');
+
+  faqDetails.forEach((detail) => {
+    const summary = detail.querySelector('summary');
+    const content = detail.querySelector('p');
+    
+    if (!summary || !content) return;
+
+    summary.addEventListener('click', (e) => {
+      e.preventDefault();
+      
+      const isOpen = detail.hasAttribute('open');
+
+      faqDetails.forEach((other) => {
+        if (other !== detail && other.hasAttribute('open')) {
+          const otherContent = other.querySelector('p');
+          if (otherContent) {
+            otherContent.style.maxHeight = '0';
+          }
+          other.removeAttribute('open');
+        }
+      });
+
+      if (!isOpen) {
+        detail.setAttribute('open', '');
+        content.style.maxHeight = content.scrollHeight + 'px';
+      } else {
+        content.style.maxHeight = '0';
+        setTimeout(() => {
+          detail.removeAttribute('open');
+        }, 300);
+      }
+    });
+  });
 });
