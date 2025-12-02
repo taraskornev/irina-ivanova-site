@@ -166,7 +166,7 @@ h1, h2, h3, h4, h5, h6,
 
 .hero-portrait { 
   flex-shrink: 0; 
-  width: 280px; 
+  width: 380px; 
   align-self: stretch; 
   border-radius: var(--radius-md); 
   overflow: hidden;
@@ -503,7 +503,16 @@ h1, h2, h3, h4, h5, h6,
 .seminar-hero-content p { margin: 0; font-size: 1rem; line-height: 1.4; color: #fff; opacity: 0.95; }
 
 .seminar-content { padding: var(--space-l) 0; padding-inline: var(--space-m); }
-.seminar-section-card { background: #fff; border: 1px solid #e6efed; border-radius: var(--radius-sm); padding: var(--space-m); margin-bottom: var(--space-m); opacity: 0; animation: fadeInUp 0.4s ease forwards; transition: box-shadow 0.25s ease; }
+.seminar-section-card { 
+  border-radius: var(--radius-md); 
+  padding: var(--space-m); 
+  margin-bottom: var(--space-m); 
+  background: #fff;
+  border: 1px solid #e6efed;
+  transition: box-shadow 0.25s ease;
+  opacity: 0; 
+  animation: fadeInUp 0.4s ease forwards; 
+}
 .seminar-section-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
 .seminar-section-card h2, .seminar-section-card h3 { margin-top: 0; margin-bottom: var(--space-s); font-weight: 600; font-size: 1.15rem; }
 .seminar-section-card p { margin-top: 0; margin-bottom: var(--space-s); line-height: var(--line-height-base); }
@@ -721,6 +730,30 @@ input:focus, textarea:focus { border-color: var(--color-accent); }
 .btn.secondary { background: var(--color-accent-soft); color: var(--color-text); border: none; }
 .btn.secondary:hover { background: var(--color-accent); color:#fff; }
 .btn:active { transform: translateY(1px); }
+
+/* ==== CTA BUTTON ==== */
+.btn-cta {
+  background-color: #D4AF37;
+  color: #ffffff;
+  padding: 0.85rem 1.6rem;
+  border-radius: 60px;
+  font-weight: 600;
+  border: none;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-cta:hover {
+  background-color: #eec53e;
+  /* box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35); */
+}
+
+.btn-cta:active {
+  background-color: #C9A234;
+  box-shadow: none;
+}
 
 /* Footer */
 .site-footer { padding: var(--space-l) 0; background: var(--color-footer-bg); border-top: none; margin-top: var(--space-xl); font-size: 0.875rem; color: var(--color-footer-text); }
@@ -980,4 +1013,87 @@ a:focus, button:focus { outline: none; }
   .card.tile.card-link:hover { box-shadow: 0 6px 24px rgba(0,0,0,0.12); }
   .faq details[open] { background: #fafafa; border-color: var(--color-footer-bg); }
   .cookie-modal { transition: none; }
+}
+
+/* ==== SEMINAR SECTION CARDS ==== */
+.seminar-section-card {
+  border-radius: var(--radius-md);
+  padding: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.seminar-section-card--plain {
+  background: transparent;
+  border: none;
+  text-align: center;
+}
+
+.seminar-section-card--plain h3,
+.seminar-section-card--plain p {
+  text-align: center;
+}
+
+.seminar-section-card--filled {
+  background: var(--color-footer-bg);
+  border-color: var(--color-footer-bg);
+  color: #ffffff;
+}
+
+.seminar-section-card--filled h3 {
+  color: #ffffff;
+}
+
+.seminar-section-card--filled p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* ==== SEMINAR TRIGGERS ROW ==== */
+.seminar-triggers-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-m);
+  margin-top: var(--space-m);
+  margin-bottom: var(--space-m);
+}
+
+.seminar-trigger-card {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: var(--radius-md);
+  padding: var(--space-l) var(--space-m) var(--space-m);
+  text-align: center;
+  border: 1px solid #ffffff;
+}
+
+/* маленький золотой кружок сверху по центру */
+.seminar-trigger-card::before {
+  content: "";
+  position: absolute;
+  top: var(--space-s);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  border: 1px solid #ffc400;
+  background-color: none;
+}
+
+.seminar-trigger-card h4 {
+  margin-top: calc(var(--space-xs) + var(--space-xs));
+  margin-bottom: var(--space-xs);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.seminar-trigger-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .seminar-triggers-row {
+    grid-template-columns: 1fr;
+  }
 }
